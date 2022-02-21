@@ -1,13 +1,9 @@
 import React, { Fragment, useState } from "react";
 import { Navigate } from "react-router-dom";
-import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { addQuestionsForUser } from "../store/userSlice";
 import { addQuestions } from "../store/questionsSlice";
+import '../style.css'
 
 function NewQuestion(props) {
 
@@ -19,7 +15,6 @@ function NewQuestion(props) {
       ...pState,
       [e.target.name]: e.target.value,
     }));
-
   };
 
   function handleSubmit(e) {
@@ -52,50 +47,49 @@ function NewQuestion(props) {
 
   return (
     <Fragment>
-      <h2 className="text-center my-3">
-        <small>Would You Rather...</small>
-      </h2>
-      <Row className="justify-content-center">
-        <Col xs={12} md={8}>
-          <Card bg="dark" className="m-3 text-center">
-            <Card.Body>
-              <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="optionOne">
-                  <Form.Label>Choice One</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="optionOne"
-                    value={optionOne}
-                    onChange={handleInputChange}
-                  />
-                </Form.Group>
-                <h3>
-                  <small>OR</small>
-                </h3>
-                <Form.Group controlId="optionTwo">
-                  <Form.Label>Choice Two</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="optionTwo"
-                    value={optionTwo}
-                    onChange={handleInputChange}
-                  />
-                </Form.Group>
+      <main className="nqmain">
+        <h2 className="nqtitle">
+          Create New Question
+        </h2>
+        <div className="nqbody">
 
-                <div className="my-3">
-                  <Button
-                    type="submit"
-                    variant="outline-light"
-                    disabled={optionOne === "" || optionTwo === ""}
-                  >
-                    Submit
-                  </Button>
-                </div>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+          <p>
+            Complete The questions
+          </p>
+          <p className="nqtext">Would You Rather ...</p>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              className="nqallwid"
+              name="optionOne"
+              value={optionOne}
+              onChange={handleInputChange}
+              placeholder="Enter Option One Text Here"
+            />
+            <h3 className="or">
+              <small>OR</small>
+            </h3>
+            <input
+              type="text"
+              className="nqallwid"
+              name="optionTwo"
+              value={optionTwo}
+              onChange={handleInputChange}
+              placeholder="Enter Option Two Text Here"
+            />
+            <div className="my-3">
+              <button
+                className="nqallwid btn nqbtn"
+                type="submit"
+                variant="outline-light"
+                disabled={optionOne === "" || optionTwo === ""}
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
     </Fragment>
   );
 

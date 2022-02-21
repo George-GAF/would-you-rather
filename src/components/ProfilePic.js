@@ -1,15 +1,14 @@
 import React from "react";
-import Image from "react-bootstrap/Image";
+import '../style.css';
 
 function ProfilePic(props) {
+  const classN = `${props.className} proimg`
   return (
-    <Image
+    <img
       src={props.avatarURL}
-      roundedCircle
-      fluid
-      width="40"
-      height="40"
-      className={props.className}
+      width="60px"
+      height="60px"
+      className=  {classN}
       alt="user avatar"
     />
   );

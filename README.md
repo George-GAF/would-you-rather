@@ -18,8 +18,3 @@ To run this project follow this steps:
 - Clone the project with `git clone https://github.com/George-GAF/would-you-rather.git`
 - CD into the project and install the dependencies with `yarn install` or `npm i`
 - Run the app with `yarn start` or `npm start`
-
-## Requirements for the project
-
-- Code adheres to udacity HTML, CSS, JavaScript, and Git style guidelines.
-- Project must pass following rubic: https://review.udacity.com/#!/rubrics/1567/view
