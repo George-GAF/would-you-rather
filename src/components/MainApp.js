@@ -6,6 +6,7 @@ import Main from "./Main";
 import NewQuestion from "./NewQuestion";
 import LeaderBoard from "./LeaderBoard";
 import PageNotFound from "./PageNotFound";
+import QuestionPage from "./QuestionPage";
 
 function MainApp(props) {
   return (
@@ -14,6 +15,7 @@ function MainApp(props) {
       <main>
         <Routes>
           <Route exact path="/" element={<Main />}></Route>
+          <Route path="/questions/:id" element={<QuestionPage/>}></Route>
           <Route path="/add" element={<NewQuestion />}></Route>
           <Route path="/leaderboard" element={<LeaderBoard />}></Route>
           <Route element={<PageNotFound />}></Route>

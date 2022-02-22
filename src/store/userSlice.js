@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let InitialData = {
-  authUser: "sarahedo",
+  authUser: null,
   users: {
     sarahedo: {
       id: "sarahedo",
