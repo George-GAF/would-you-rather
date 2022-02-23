@@ -3,8 +3,11 @@ import { useSelector } from "react-redux";
 import UserData from "./UserData";
 
 function LeaderBoard(props) {
-  const users = useSelector(state=>state.users.users)
-
+  const users = Object.entries(useSelector(state => state.users.users))
+  users.sort((a, b) =>
+    (Object.keys(b[1].answers).length + b[1].questions.length) - (Object.keys(a[1].answers).length + a[1].questions.length)
+  )
+  
   return (
     <Fragment>
       <h2 className="text-center my-3">
@@ -21,8 +24,8 @@ function LeaderBoard(props) {
           </tr>
         </thead>
         <tbody>
-          {Object.values(users).map((user) => (
-            <UserData key={user.id} user={user} />
+          {users.map((user) => (
+            <UserData key={user[0]} user={user} />
           ))}
         </tbody>
 

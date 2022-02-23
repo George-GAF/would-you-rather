@@ -5,9 +5,9 @@ import "../style.css";
 
 
 function UserData(props) {
- 
+
   const { user } = props;
-  const { name, avatarURL, answers, questions } = user;
+  const { name, avatarURL, answers, questions } = user[1];
 
   return (
     <tr>

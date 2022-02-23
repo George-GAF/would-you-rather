@@ -51,7 +51,6 @@ const usersSlice = createSlice({
       state.users[authUser].answers[actions.payload.i] = actions.payload.a
     },
     addQuestionsForUser:(state,actions)=>{
-      console.log(actions.payload)
       state.users[state.authUser].questions.push(actions.payload)
     },
     logOut:(state)=>{

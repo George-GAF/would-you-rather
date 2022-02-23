@@ -23,8 +23,6 @@ function NewQuestion(props) {
     const id = generateUID()
     const questionsDetail = { id: id, author: authUser, optionOne: optionOne, optionTwo: optionTwo }
 
-    console.log(questionsDetail)
-
     dispatch(addQuestionsForUser(id))
     dispatch(addQuestions(questionsDetail))
     setState({
